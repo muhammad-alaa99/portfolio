@@ -1,0 +1,501 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap");
+:root {
+  --bg-900: #f2f2fc;
+  --bg-100: #fdf9ff;
+  --bg-50: #e8dfec;
+  --text-900: #302e4d;
+  --text-700: #504e70;
+}
+body.dark {
+  --bg-900: #151515;
+  --bg-100: #222222;
+  --bg-50: #393939;
+  --text-900: #ffffff;
+  --text-700: #e9e9e9;
+}
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: "Poppins" sans-serif;
+}
+::after,
+::before {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.section {
+  background-color: var(--bg-900);
+  min-height: 100vh;
+  display: block;
+  padding: 0 30px;
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+.main-content {
+  padding-left: 270px;
+}
+.hidden {
+  display: none !important;
+}
+.section .container {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+.section-title {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.section-title h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-900);
+  position: relative;
+  font-family: "Clicker", cursive;
+}
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 70px;
+  top: 100%;
+  left: 0;
+  background-color: var(--skin);
+}
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 50px;
+  top: 100%;
+  left: 0;
+  background-color: var(--skin);
+  margin-top: 8px;
+}
+.main-btn {
+  padding: 12px 35px;
+  font-weight: 500;
+  color: #fff;
+  background-color: var(--skin);
+  transition: all 0.3s ease;
+  border: none;
+  margin-bottom: 20px;
+}
+.main-btn:hover {
+  transform: scale(1.05);
+  background-color: var(--skin);
+}
+body .shadow-dark {
+  box-shadow: 0 0 30px rgba(48, 46, 77, 0.2);
+}
+body.dark .shadow-dark {
+  box-shadow: 0 0 30px rgba(233, 232, 245, 0.15);
+}
+p {
+  color: var(--text-700);
+}
+.nav-toggler {
+  width: 45px;
+  height: 40px;
+  border: 1px solid var(--bg-50);
+  border-radius: 5px;
+  position: fixed;
+  left: 50px;
+  top: 20px;
+  background-color: var(--bg-100);
+  cursor: pointer;
+  text-align: center;
+  display: none;
+}
+.nav-toggler span {
+  background-color: var(--skin);
+  width: 18px;
+  height: 2px;
+  display: inline-block;
+  position: relative;
+}
+.nav-toggler span::after {
+  content: "";
+  background-color: var(--skin);
+  width: 18px;
+  height: 2px;
+  position: absolute;
+  top: -6px;
+  left: 0;
+}
+.nav-toggler span::before {
+  content: "";
+  background-color: var(--skin);
+  width: 18px;
+  height: 2px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+/* == side == */
+.side {
+  background-color: var(--bg-100);
+  width: 270px;
+  left: 0;
+  top: 0;
+  padding: 30px;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  border-right: 1px solid var(--bg-50);
+  transition: all 0.3s ease;
+}
+.side .logo {
+  top: 50px;
+  font-size: 30px;
+}
+.side .logo a {
+  color: var(--text-900);
+  font-family: 700;
+  padding: 10px 15px;
+  letter-spacing: 3px;
+  font-family: "Clicker", cursive;
+}
+.side .logo a span {
+  font-family: "Clicker Script", cursive;
+  font-size: 40px;
+}
+.side .logo a::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-bottom: 5px solid var(--skin);
+  border-left: 5px solid var(--skin);
+  bottom: 0;
+  left: 0;
+}
+.side .logo a::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-top: 5px solid var(--skin);
+  border-right: 5px solid var(--skin);
+  top: 0;
+  right: 0;
+}
+
+.side .list li a {
+  font-weight: 600;
+  display: block;
+  padding: 5px 15px;
+  color: var(--text-900);
+  border-bottom: 1px solid var(--bg-50);
+}
+.side .list li a.active {
+  color: var(--skin);
+}
+.side .list li a svg {
+  margin-right: 15px;
+}
+/* == home == */
+.home {
+  transition: all 0.3s ease;
+}
+.home h3.hello {
+  font-size: 28px;
+  color: var(--text-900);
+}
+.home h3.hello span {
+  font-family: "Clicker Script", cursive;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--skin);
+}
+
+.home h4.my-profission {
+  font-size: 30px;
+  color: var(--text-900);
+  margin: 15px 0;
+}
+.home h4.my-profission .typing {
+  color: var(--skin);
+}
+.home p {
+  color: var(--text-700);
+}
+.home .img::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-bottom: 10px solid var(--skin);
+  border-right: 10px solid var(--skin);
+  bottom: -20px;
+  right: -5px;
+}
+.home .img::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-top: 10px solid var(--skin);
+  border-left: 10px solid var(--skin);
+  left: -20px;
+  top: -5px;
+}
+/* === Aboute === */
+.about {
+  transition: all 0.3s ease;
+}
+.about .about-content .about-text {
+  padding-top: 50px;
+}
+.about .about-content .about-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: var(--text-900);
+}
+.about .about-content .about-text h3 span {
+  color: var(--skin);
+}
+.about .about-text p {
+  color: var(--text-900);
+}
+.about .about-content .info .info-item p {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-900);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--bg-50);
+}
+.about .about-content .info .info-item p span {
+  font-weight: 400;
+  color: var(--text-700);
+  margin-left: 4px;
+  display: inline-block;
+}
+.about .about-content .skills .skill-item h5 {
+  color: var(--text-900);
+  line-height: 40px;
+  font-weight: 400;
+}
+.about .about-content .skills .skill-item .skill-progress {
+  background-color: var(--bg-50);
+  height: 4px;
+  border-radius: 5px;
+  position: relative;
+}
+.about .about-content .skills .skill-item .skill-progress span {
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--skin);
+  position: absolute;
+}
+.about .about-content .skills .skill-item .skill-persent {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-weight: 400;
+  line-height: 40px;
+  color: var(--text-900);
+}
+.about-content h3.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-900);
+  margin-bottom: 30px;
+}
+.about-content .timeline-box .timeline {
+  background-color: var(--bg-100);
+  border: 1px solid var(--bg-50);
+  padding: 30px 15px;
+  border-radius: 5px;
+  position: relative;
+}
+.about-content .timeline .timeLine-item {
+  padding-left: 37px;
+  position: relative;
+  padding-bottom: 50px;
+}
+.about-content .timeline .timeLine-item:last-child {
+  padding-bottom: 0;
+}
+.about-content .timeline .timeLine-item::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: var(--skin);
+  top: 0;
+  left: 0;
+}
+.about-content .timeline .timeLine-item .circle {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--skin);
+  top: 0;
+  left: -6px;
+}
+.about-content .timeline .timeLine-item .timeLine-date svg {
+  margin-right: 10px;
+}
+.about-content .timeline .timeLine-item .timeLine-date {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-700);
+  padding-bottom: 20px;
+}
+.about-content .timeline .timeLine-item .title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+/* services */
+.services {
+  transition: all 0.3s ease;
+}
+.services .container {
+  padding-bottom: 40px;
+}
+.services .services-item {
+  background-color: var(--bg-100);
+  border: 1px solid var(--bg-50);
+  border-radius: 10px;
+  padding-top: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+.services .services-item:hover {
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+body.dark .services .services-item:hover {
+  box-shadow: 0 0 20px rgba(231, 231, 236, 0.15);
+}
+.services .services-item .icon {
+  width: 60px;
+  line-height: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 30px;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+.services .services-item .icon svg {
+  font-size: 40px;
+  line-height: 60px;
+  color: var(--skin);
+  transition: all 0.5s ease;
+  /* text-align: center; */
+}
+.services .services-item:hover .icon svg {
+  font-size: 30px;
+  color: #fff;
+}
+.services .services-item:hover .icon {
+  background-color: var(--skin);
+}
+
+.services .services-item h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-900);
+  margin-bottom: 15px;
+}
+/* porfolio */
+.portfolio {
+  transition: all 0.3s ease;
+}
+.portfolio .portfolio-heading {
+  margin-bottom: 40px;
+}
+.portfolio .portfolio-heading h2 {
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--text-900);
+  font-family: "Clicker", cursive;
+}
+.portfolio .portfolio-item {
+  border: 6px solid var(--bg-100);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  overflow: hidden;
+}
+/* contact */
+.contact {
+  transition: all 0.3s ease;
+}
+.contact .contact-title {
+  font-size: 25px;
+  text-align: center;
+  font-family: "Clicker", cursive;
+  color: var(--skin);
+}
+.contact .contact-sub-title {
+  font-size: 15px;
+  text-align: center;
+  font-family: "Clicker", cursive;
+  color: var(--text-900);
+  margin-bottom: 60px;
+}
+.contact .contact-item .icon svg {
+  color: var(--skin);
+}
+.contact .contact-item h4 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Clicker", cursive;
+  margin: 10px 0;
+  color: var(--text-900);
+}
+.contact form input,
+.contact form textarea {
+  border: none;
+  background-color: var(--bg-100);
+  border: 1px solid var(--bg-50);
+  height: 50px;
+  color: var(--text-700);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.contact form textarea {
+  height: 140px;
+  border-radius: 30px;
+}
+.contact form input:focus,
+.contact form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+body.dark .contact form input:focus,
+body.dark .contact form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 20px rgba(231, 231, 236, 0.15);
+}
+@media (max-width: 991px) {
+  .container {
+    max-width: 930px;
+  }
+  .side {
+    left: -270px;
+  }
+  .side.open {
+    left: 0;
+  }
+  .nav-toggler {
+    display: block;
+    z-index: 1000;
+  }
+  .main-content {
+    padding-left: 0;
+  }
+}
